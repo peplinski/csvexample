@@ -1,12 +1,11 @@
 package pl.csvExample;
 
-import java.time.LocalTime;
 
 public class Grafik {
-    private String  nrSluzbowy;
+    protected String nrSluzbowy;
     private String linia;
-    private String  godzRozpoczecia;
-    private String  godzZakonczenia;
+    private String godzRozpoczecia;
+    private String godzZakonczenia;
 
     public String getNrSluzbowy() {
         return nrSluzbowy;
