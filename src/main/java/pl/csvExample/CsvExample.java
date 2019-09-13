@@ -28,10 +28,15 @@ public class CsvExample {
         Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\Pepe\\Desktop\\kopiagrafiku.csv"));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.newFormat(';'));
         for (CSVRecord record : csvParser) {
-            int nrKierowcy = Integer.parseInt(record.get(0));
+
+            //int nrKierowcy = Integer.parseInt(record.get(0));
+            String nrKierowcy = record.get(0);
+            if (nrKierowcy.isEmpty())
+                continue;
             String linia = record.get(1);
-            LocalTime godzRozp = LocalTime.parse(record.get(2));
-            LocalTime godzZak = LocalTime.parse(record.get(3));
+            //LocalTime godzRozp = LocalTime.parse(record.get(2));
+            String godzRozp = record.get(2);
+            String godzZak = record.get(3);
 
             System.out.println(nrKierowcy + " " + linia + " " + godzRozp + " " + godzZak);
         }
