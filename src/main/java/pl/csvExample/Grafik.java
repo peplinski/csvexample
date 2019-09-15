@@ -1,11 +1,19 @@
 package pl.csvExample;
 
 
+import java.time.LocalTime;
 public class Grafik {
     protected String nrSluzbowy;
     private String linia;
-    private String godzRozpoczecia;
-    private String godzZakonczenia;
+    private LocalTime godzRozpoczecia;
+    private LocalTime godzZakonczenia;
+
+    public Grafik(String nrSluzbowy, String linia, LocalTime godzRozpoczecia, LocalTime godzZakonczenia) {
+        this.nrSluzbowy = nrSluzbowy;
+        this.linia = linia;
+        this.godzRozpoczecia = godzRozpoczecia;
+        this.godzZakonczenia = godzZakonczenia;
+    }
 
     public String getNrSluzbowy() {
         return nrSluzbowy;
@@ -23,19 +31,19 @@ public class Grafik {
         this.linia = linia;
     }
 
-    public String getGodzRozpoczecia() {
+    public LocalTime getGodzRozpoczecia() {
         return godzRozpoczecia;
     }
 
-    public void setGodzRozpoczecia(String godzRozpoczecia) {
+    public void setGodzRozpoczecia(LocalTime godzRozpoczecia) {
         this.godzRozpoczecia = godzRozpoczecia;
     }
 
-    public String getGodzZakonczenia() {
+    public LocalTime getGodzZakonczenia() {
         return godzZakonczenia;
     }
 
-    public void setGodzZakonczenia(String godzZakonczenia) {
+    public void setGodzZakonczenia(LocalTime godzZakonczenia) {
         this.godzZakonczenia = godzZakonczenia;
     }
 
