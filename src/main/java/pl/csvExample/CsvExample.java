@@ -44,12 +44,14 @@ public class CsvExample {
         for (CSVRecord record : csvParser) {
             Map<String, Object> documentMapDetail = new HashMap<String, Object>();
             documentMapDetail.put("workNumber", record.get(0));
+            if (record.get(0).isEmpty())
+                continue;
             documentMapDetail.put("busLine", record.get(1));
             documentMapDetail.put("startTime", record.get(2));
             documentMapDetail.put("endTime", record.get(3));
             documentMap.put("grafik_dzienny", documentMapDetail);
+            collection.insert(new BasicDBObject(documentMap));
         }
-        collection.insert(new BasicDBObject(documentMap));
     }
 
     static void readData() throws IOException {
