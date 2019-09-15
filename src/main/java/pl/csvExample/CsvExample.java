@@ -20,6 +20,7 @@ public class CsvExample {
     }
 
     public static void main(String[] args) throws IOException {
+        //mongo db
         MongoClient mongo = new MongoClient("localhost", 27017);
         DB db = mongo.getDB("test");
         DBCollection collection = db.getCollection("schedule_uploadfile");
